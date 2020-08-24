@@ -27,6 +27,21 @@ android {
         abortOnError false
     }
   
+    //渠道Flavors   
+    productFlavors {        
+        Xiaomi {            
+           // manifestPlaceholders = [UMENG_CHANNEL_VALUE: "wandoujia"]       
+           println "渠道-小米"
+        }        
+        Wandoujia {            
+          //  manifestPlaceholders = [UMENG_CHANNEL_VALUE: "xiaomi"]       
+           println "渠道-豌豆夹"
+        } 
+        Tencent {            
+            //manifestPlaceholders = [UMENG_CHANNEL_VALUE: "xiaomi"]
+             println "渠道-腾讯"
+        } 
+    } 
 
    
     android.applicationVariants.all {
