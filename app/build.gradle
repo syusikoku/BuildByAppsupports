@@ -25,14 +25,7 @@ android {
         abortOnError false
     }
   
-   
-  //  android.applicationVariants.all { variant ->
-    //    variant.outputs.all {
-      //      variant.getPackageApplication().outputDirectory = new File(project.rootDir.absolutePath + "/build/outputs/apk")
-        //    outputFileName = "BuildByAppsupports_${project.name}_${defaultConfig.versionName}_${variant.buildType.name}.apk"
-       //}
-   // }
-   
+
    
     android.applicationVariants.all {
        variant ->
@@ -43,18 +36,9 @@ android {
              }
      }
      
-     showParams()
+    // showParams()
     
-  //  android.applicationVariants.all { variant ->
-     //  variant.outputs.each { output ->
-       //     def outputFile = output.outputFile
-       //     if (outputFile != null && outputFile.name.endsWith('.apk')) {
-       //         //这里修改apk文件名
-       //         def fileName = outputFile.name.replace("app","${defaultConfig.applicationId }_${defaultConfig.versionName}_${releaseTime() }")
-      //          output.outputFile = new File(outputFile.parent, fileName)
-      //      }
-     //   }
-  //  }
+
      
 }
 
