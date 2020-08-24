@@ -4,6 +4,8 @@ android {
     compileSdkVersion 30
     buildToolsVersion "30.0.2"
 
+    showParams()
+  
     defaultConfig {
         applicationId "com.example.bcompat"
         minSdkVersion 16
@@ -36,7 +38,7 @@ android {
              }
      }
      
-    // showParams()
+  
     
 
      
