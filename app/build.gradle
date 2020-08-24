@@ -42,6 +42,8 @@ android {
                 outputFileName = "${project.name}_${variant.name}-v${variant.versionName}_${getDate()}.apk"
              }
      }
+     
+     printfln(getJenkinsVersion())
     
   //  android.applicationVariants.all { variant ->
      //  variant.outputs.each { output ->
@@ -54,6 +56,17 @@ android {
      //   }
   //  }
      
+}
+
+def getJenkinsVersion() {
+    def channels = System.getenv("PRODUCT_FLAVOR_BUILD");
+    // String channels="local;dadad;okok"
+    channels.toString().tokenize(';').each { channelItem ->
+        android.productFlavors.create(channelItem, {
+            // 替换渠道号
+            manifestPlaceholders = [CHANNEL_NAME: channelItem]
+        })
+    }
 }
 
 def releaseTime() {
