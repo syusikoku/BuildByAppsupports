@@ -20,7 +20,28 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    
+    lintOptions {
+        abortOnError false
+    }
+  
+   
+    android.applicationVariants.all { variant ->
+        variant.outputs.all {
+            variant.getPackageApplication().outputDirectory = new File(project.rootDir.absolutePath + "/build/outputs/apk")
+            outputFileName = "${project.name}_${defaultConfig.versionName}_${variant.buildType.name}.apk"
+       }
+    }
+     
 }
+
+//获取时间戳
+def getDate() {
+    def date = new Date()
+    def formattedDate = date.format('yyyyMMddHHmm')
+    return formattedDate
+}
+
 
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
