@@ -4,7 +4,7 @@ android {
     compileSdkVersion 30
     buildToolsVersion "30.0.2"
 
-    showParams()
+    showInjectParamInfos()
   
     defaultConfig {
         applicationId "com.example.bcompat"
@@ -29,11 +29,14 @@ android {
   
 }
 
-def showParams(){
+def showInjectParamInfos(){
     println "showParams"
 
     println "BUILD_TYPE : ${BUILD_TYPE}"
     println "PRODUCT_FLAVORS : ${PRODUCT_FLAVORS}"
+    println "IS_JENKINS : ${IS_JENKINS}"
+    println "APP_VERSION : ${APP_VERSION}"
+    println "BUILD_TIME : ${BUILD_TIME}"
 
 }
 
