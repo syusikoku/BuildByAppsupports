@@ -39,7 +39,7 @@ android {
          variant.outputs.all {
                //在这里修改apk文件名
                 // _v${defaultConfig.versionName}_${buildType.name}_${releaseTime()}.apk"
-                outputFileName = "${variant.name}-v${variant.versionName}_${getDate()}.apk"
+                outputFileName = ""${project.name}_${variant.name}-v${variant.versionName}_${getDate()}.apk"
              }
      }
     
