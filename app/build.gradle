@@ -26,11 +26,20 @@ android {
     }
   
    
-    android.applicationVariants.all { variant ->
-        variant.outputs.all {
-            variant.getPackageApplication().outputDirectory = new File(project.rootDir.absolutePath + "/build/outputs/apk")
-            outputFileName = "${project.name}_${defaultConfig.versionName}_${variant.buildType.name}.apk"
-       }
+  //  android.applicationVariants.all { variant ->
+    //    variant.outputs.all {
+      //      variant.getPackageApplication().outputDirectory = new File(project.rootDir.absolutePath + "/build/outputs/apk")
+        //    outputFileName = "${project.name}_${defaultConfig.versionName}_${variant.buildType.name}.apk"
+       //}
+   // }
+   
+   
+    android.applicationVariants.all {
+        variant ->
+            variant.outputs.all {
+                //在这里修改apk文件名
+                outputFileName = "${variant.name}-v${variant.versionName}.apk"
+            }
     }
      
 }
