@@ -27,53 +27,6 @@ android {
         abortOnError false
     }
   
-    productFlavors {
-        //  默认
-      wdouj {}
-      qq {}
-        // google 
-      //  谷歌商店 {}
-        // 百度应用市场
-      //  百度应用市场 {}
-        // 360应用市场
-        //_360应用市场 {}
-        // 应用宝
-       // 应用宝 {}
-        // 豌豆荚
-      //  豌豆荚 {}
-        // 小米商店
-      //  小米商店 {}
-        // 安卓市场
-       // 安卓市场 {}
-        // 91助手
-      //  _91助手 {}
-        // 安智市场
-      //  安智市场 {}
-        // 应用汇
-      //  应用汇 {}
-        // 机锋市场
-      //  机锋市场 {}
-        // 魅族商店
-     // 魅族商店 {}
-        productFlavors.all {
-            // flavor -> flavor.manifestPlaceholders = [UMENG_CHANNEL_VALUE: name]
-        }
- 
-    }
-   
-    android.applicationVariants.all {
-       variant ->
-         variant.outputs.all {
-               //在这里修改apk文件名
-                // _v${defaultConfig.versionName}_${buildType.name}_${releaseTime()}.apk"
-                outputFileName = "${project.name}_${variant.name}-v${variant.versionName}_${getDate()}.apk"
-             }
-     }
-     
-  
-    
-
-     
 }
 
 def showParams(){
