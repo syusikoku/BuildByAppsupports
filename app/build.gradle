@@ -27,6 +27,29 @@ android {
         abortOnError false
     }
   
+   //自定义打包时apk名字
+        android.applicationVariants.all { variant ->
+            variant.outputs.all { output ->
+                def fileName
+                if (outputFileName != null && outputFileName.contains('.apk')) {
+                    if (variant.buildType.name.equals('release')) {
+                        //输出示例：  yilv-huawei-release.apk
+                        fileName = "yilv-${variant.productFlavors[0].name}-${defaultConfig.versionName}-relese.apk"
+                    } else if (variant.buildType.name.equals('debug')) {
+                        fileName = "yilv-${variant.productFlavors[0].name}-${defaultConfig.versionName}-debug.apk"
+                    }
+                    outputFileName = fileName
+                }
+            }
+        }
+ 
+        //渠道
+        productFlavors {
+            develop {}
+            xiaomi {}
+            huawei {}
+ 
+        }
 }
 
 def showInjectParamInfos(){
