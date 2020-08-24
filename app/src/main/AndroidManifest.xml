@@ -17,10 +17,7 @@
             </intent-filter>
         </activity>
             
-        <meta-data
-            android:name="CHANNEL"
-            android:value="${CHANNEL_NAME}"
-            />    
+           
     </application>
 
 </manifest>
