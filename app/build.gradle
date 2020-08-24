@@ -45,14 +45,14 @@ android {
 }
 
 def showParams(){
-    println(PRODUCT_FLAVOR_BUILD)
-    println(BUILD_TYPE)
-    println(IS_JENKINS)
-    println(PRODUCT_FLAVORS)
-    println(PRODUCT_FLAVORS)
-    println(APP_VERSION)
-    println(BUILD_TIME)
-    PRODUCT_FLAVOR_BUILD="baidu"
+    println "showParams"
+    // println(PRODUCT_FLAVOR_BUILD)
+    // println(BUILD_TYPE)
+    // println(IS_JENKINS)
+    // println(PRODUCT_FLAVORS)
+    // println(PRODUCT_FLAVORS)
+    // println(APP_VERSION)
+    // println(BUILD_TIME)
 }
 
 
