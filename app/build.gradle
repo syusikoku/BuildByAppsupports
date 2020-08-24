@@ -56,7 +56,7 @@ android {
         // 魅族商店
      // 魅族商店 {}
         productFlavors.all {
-            flavor -> flavor.manifestPlaceholders = [UMENG_CHANNEL_VALUE: name]
+            // flavor -> flavor.manifestPlaceholders = [UMENG_CHANNEL_VALUE: name]
         }
  
     }
