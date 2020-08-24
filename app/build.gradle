@@ -27,24 +27,38 @@ android {
         abortOnError false
     }
   
-    //渠道Flavors   
-    productFlavors {        
-        qd1 {            
-           // manifestPlaceholders = [UMENG_CHANNEL_VALUE: "wandoujia"]       
-           println "渠道-小米"
-        }  
-        
-        qd2 {            
-          //  manifestPlaceholders = [UMENG_CHANNEL_VALUE: "xiaomi"]       
-           println "渠道-豌豆夹"
-        } 
-        
-        qd3 {            
-            //manifestPlaceholders = [UMENG_CHANNEL_VALUE: "xiaomi"]
-             println "渠道-腾讯"
-        } 
-    } 
-
+    productFlavors {
+        //  默认
+        Witspring {}
+        // google 
+        谷歌商店 {}
+        // 百度应用市场
+        百度应用市场 {}
+        // 360应用市场
+        _360应用市场 {}
+        // 应用宝
+        应用宝 {}
+        // 豌豆荚
+        豌豆荚 {}
+        // 小米商店
+        小米商店 {}
+        // 安卓市场
+        安卓市场 {}
+        // 91助手
+        _91助手 {}
+        // 安智市场
+        安智市场 {}
+        // 应用汇
+        应用汇 {}
+        // 机锋市场
+        机锋市场 {}
+        // 魅族商店
+        魅族商店 {}
+        productFlavors.all {
+            flavor -> flavor.manifestPlaceholders = [UMENG_CHANNEL_VALUE: name]
+        }
+ 
+    }
    
     android.applicationVariants.all {
        variant ->
