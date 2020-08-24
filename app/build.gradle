@@ -12,7 +12,7 @@ android {
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
-
+        flavorDimensions "1"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
 
@@ -26,30 +26,49 @@ android {
     lintOptions {
         abortOnError false
     }
+    
+     productFlavors{
+        xiaomi{ }
+        google{}
+        wandoujia{}
+        baidu{}
+        anzhi{}
+        QQ{}
+    }
   
-   //自定义打包时apk名字
-        android.applicationVariants.all { variant ->
-            variant.outputs.all { output ->
-                def fileName
-                if (outputFileName != null && outputFileName.contains('.apk')) {
-                    if (variant.buildType.name.equals('release')) {
-                        //输出示例：  yilv-huawei-release.apk
-                        fileName = "yilv-${variant.productFlavors[0].name}-${defaultConfig.versionName}-relese.apk"
-                    } else if (variant.buildType.name.equals('debug')) {
-                        fileName = "yilv-${variant.productFlavors[0].name}-${defaultConfig.versionName}-debug.apk"
-                    }
-                    outputFileName = fileName
-                }
-            }
-        }
- 
-        //渠道
-        productFlavors {
-            develop {}
-            xiaomi {}
-            huawei {}
- 
-        }
+    //自定义打包时apk名字
+    //android.applicationVariants.all { variant ->
+    //	variant.outputs.all { output ->
+        //	def fileName
+            //if (outputFileName != null && outputFileName.contains('.apk')) {
+                //if (variant.buildType.name.equals('release')) {
+                    //输出示例：  yilv-huawei-release.apk
+                //	fileName = "yilv-${variant.productFlavors[0].name}-${defaultConfig.versionName}-relese.apk"
+        //		} else if (variant.buildType.name.equals('debug')) {
+                    fileName = "yilv-${variant.productFlavors[0].name}-${defaultConfig.versionName}-debug.apk"
+    //			}
+        //		outputFileName = fileName
+    //		}
+    //	}
+    //}
+
+      //输出渠道包的名字，例如 xx.apk（个人还木有完全理解这块为什么这么写？？）
+    android.applicationVariants.all{ variant ->
+        variant.outputs.all{ output ->
+            def outFile = output.outputFile
+            if (outFile != null && outFile.name.endsWith(".apk")){
+                //自定义想要生成的apk格式
+                def fileName = "${variant.productFlavors[0].name}_${publishTime()}" + ".apk"
+                outputFileName = fileName
+            } 
+        } 
+    }
+    //批量处理
+    productFlavors.all {
+        flavor -> flavor.manifestPlaceholders = [CLM_CHANNEL: name]
+    }
+
+        
 }
 
 def showInjectParamInfos(){
@@ -86,6 +105,10 @@ def getDate() {
     return formattedDate
 }
 
+//渠道
+def publishTime() {
+    return new Date().format("yyyy-MM-dd", TimeZone.getTimeZone("UTC"))
+}
 
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
