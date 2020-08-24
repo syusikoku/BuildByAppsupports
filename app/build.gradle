@@ -45,7 +45,7 @@ android {
                     //输出示例：  yilv-huawei-release.apk
                 //	fileName = "yilv-${variant.productFlavors[0].name}-${defaultConfig.versionName}-relese.apk"
         //		} else if (variant.buildType.name.equals('debug')) {
-                    fileName = "yilv-${variant.productFlavors[0].name}-${defaultConfig.versionName}-debug.apk"
+              //      fileName = "yilv-${variant.productFlavors[0].name}-${defaultConfig.versionName}-debug.apk"
     //			}
         //		outputFileName = fileName
     //		}
