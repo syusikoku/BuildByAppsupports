@@ -17,6 +17,7 @@
             </intent-filter>
         </activity>
             
+             <meta-data android:name="CLM_CHANNEL_ID" android:value="${CLM_CHANNEL}" />
            
     </application>
 
