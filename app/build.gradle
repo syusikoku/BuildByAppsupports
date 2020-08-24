@@ -56,6 +56,10 @@ android {
      
 }
 
+def releaseTime() {
+    return new Date().time.hashCode()
+}
+
 //获取时间戳
 def getDate() {
     def date = new Date()
