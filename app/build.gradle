@@ -29,15 +29,17 @@ android {
   
     //渠道Flavors   
     productFlavors {        
-        Xiaomi {            
+        qd1 {            
            // manifestPlaceholders = [UMENG_CHANNEL_VALUE: "wandoujia"]       
            println "渠道-小米"
-        }        
-        Wandoujia {            
+        }  
+        
+        qd2 {            
           //  manifestPlaceholders = [UMENG_CHANNEL_VALUE: "xiaomi"]       
            println "渠道-豌豆夹"
         } 
-        Tencent {            
+        
+        qd3 {            
             //manifestPlaceholders = [UMENG_CHANNEL_VALUE: "xiaomi"]
              println "渠道-腾讯"
         } 
