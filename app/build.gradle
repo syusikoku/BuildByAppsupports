@@ -47,7 +47,7 @@ android {
 def showParams(){
     println "showParams"
     // println(PRODUCT_FLAVOR_BUILD)
-    // println(BUILD_TYPE)
+    println "${BUILD_TYPE}"
     // println(IS_JENKINS)
     // println(PRODUCT_FLAVORS)
     // println(PRODUCT_FLAVORS)
