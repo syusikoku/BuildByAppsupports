@@ -89,7 +89,7 @@ android {
             def outFile = output.outputFile
             if (outFile != null && outFile.name.endsWith(".apk")){
                 //自定义想要生成的apk格式
-                def fileName = "${variant.productFlavors[0].name}_${publishTime()}" + ".apk"
+                def fileName = "${variant.productFlavors[0].name}_${JENKINS_TIME}" + ".apk"
                 outputFileName = fileName
             } 
         } 
