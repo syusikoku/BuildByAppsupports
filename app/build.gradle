@@ -80,6 +80,12 @@ def showInjectParamInfos(){
     println "APP_VERSION : ${APP_VERSION}"
     println "BUILD_TIME : ${BUILD_TIME}"
 
+     println "JENKINS_TIME : ${JENKINS_TIME}"
+     println "JENKINS_BUILD_NUMBER : ${JENKINS_BUILD_NUMBER}"
+     println "APP_STORE_PASSWORD : ${APP_STORE_PASSWORD}"
+     println "APP_KEY_ALIAS : ${APP_KEY_ALIAS}"
+     println "APP_KEY_PASSWORD : ${APP_KEY_PASSWORD}"
+     println "PEINFORCE_FOR_360 : ${PEINFORCE_FOR_360}"
 }
 
 
