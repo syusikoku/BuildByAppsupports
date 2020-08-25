@@ -5,6 +5,36 @@ android {
     buildToolsVersion "30.0.2"
 
     showInjectParamInfos()
+    
+    signingConfigs {
+        debug {
+            try {
+                storeFile file("${APP_STORE_FILE_DIR}")
+                storePassword "${APP_STORE_PASSWORD}"
+                keyAlias "${APP_KEY_ALIAS}"
+                keyPassword "${APP_KEY_PASSWORD}"
+                v1SigningEnabled true
+                v2SigningEnabled false
+            }
+            catch (ex) {
+                ex.printStackTrace()
+                throw new InvalidUserDataException("秘钥用户名或密码错误${ex.getMessage()}")
+            }
+        }
+        release {
+            try {
+                storeFile file("${APP_STORE_FILE_DIR}")
+                storePassword "${APP_STORE_PASSWORD}"
+                keyAlias "${APP_KEY_ALIAS}"
+                keyPassword "${APP_KEY_PASSWORD}"
+                v1SigningEnabled true
+                v2SigningEnabled false
+            }
+            catch (ex) {
+                throw new InvalidUserDataException("秘钥用户名或密码错误")
+            }
+        }
+    }
   
     defaultConfig {
         applicationId "com.example.bcompat"
@@ -82,6 +112,7 @@ def showInjectParamInfos(){
 
      println "JENKINS_TIME : ${JENKINS_TIME}"
      println "JENKINS_BUILD_NUMBER : ${JENKINS_BUILD_NUMBER}"
+     println "APP_STORE_FILE_DIR : ${APP_STORE_FILE_DIR}"
      println "APP_STORE_PASSWORD : ${APP_STORE_PASSWORD}"
      println "APP_KEY_ALIAS : ${APP_KEY_ALIAS}"
      println "APP_KEY_PASSWORD : ${APP_KEY_PASSWORD}"
